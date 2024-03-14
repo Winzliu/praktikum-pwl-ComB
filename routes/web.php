@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\TodoTaskController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,8 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home', [
-        'task' => 'task2',
-    ]);
-});
+Route::get('/', [TodoTaskController::class, 'index']);
+
+Route::post('/', [TodoTaskController::class, 'store']);
+
