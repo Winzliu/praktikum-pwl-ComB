@@ -12,6 +12,9 @@
       </div>
       <input name="task" type="text" placeholder="Type here"
         class="input input-bordered input-success w-full max-w-lg" />
+      @error('task')
+      <p class="text-red-500">{{ $message }}</p>
+      @enderror
       <div class="label">
       </div>
       {{-- button add --}}
@@ -30,8 +33,8 @@
         d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
       </svg>
       <div class="flex flex-col">
-        <span class="text-sm text-slate-400">{{ $task['tanggal'] }}</span>
-        <span class="text-xl font-bold">{{ $task['task'] }}</span>
+        <span class="text-sm text-slate-400">{{ $task->tanggal }}</span>
+        <span class="text-xl font-bold">{{ $task->task }}</span>
       </div>
       <div>
         <div class="tooltip" data-tip="Detail">
